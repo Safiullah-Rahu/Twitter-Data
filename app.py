@@ -17,21 +17,24 @@ This app allows you to analyze Twitter data from an Excel file. This app will be
 st.subheader("Upload xlsx File of Tweets")
 st.write("""Go to 'https://www.vicinitas.io/' and download the tweets of your desired Twitter handle by writing username of the twitter account and then an xlsx file will be downloaded. Upload that file below to Analyze Tweet Data.""")
 # Define a function to allow the user to upload a file
+# def file_upload():
+#     uploaded_file = st.file_uploader("Choose an Excel file", type="xlsx")
+#     if uploaded_file is not None:
+#         df = pd.read_excel(uploaded_file)
+#         return df
+#     else:
+#         return None
 def file_upload():
     uploaded_file = st.file_uploader("Choose an Excel file", type="xlsx")
     if uploaded_file is not None:
-        df = pd.read_excel(uploaded_file)
-        return df
-    else:
-        return None
-
+        return uploaded_file
 # Allow the user to upload a file and store it in a variable
 file = file_upload()
-
+# 'elonmusk_user_tweets.xlsx'
 # If a file was uploaded, display its data using Streamlit
 if file is not None:
     # Use pandas to read in the Excel file
-    df = pd.read_excel('elonmusk_user_tweets.xlsx', usecols=['Tweet Id', 'Text', 'Name', 'Screen Name', 'UTC', 'Created At', 'Favorites', 'Retweets', 'Language', 'Client', 'Tweet Type'])
+    df = pd.read_excel(file , usecols=['Tweet Id', 'Text', 'Name', 'Screen Name', 'UTC', 'Created At', 'Favorites', 'Retweets', 'Language', 'Client', 'Tweet Type'])
     # Display some basic information about the data
     st.sidebar.write("## About")
     st.sidebar.write("This app allows you to analyze Twitter data from an Excel file.This app will be further developed to preprocess this tweets dataset for Fine Tuning Large Language Models in future.")
