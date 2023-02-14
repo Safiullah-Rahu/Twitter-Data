@@ -31,8 +31,7 @@ file = file_upload()
 # If a file was uploaded, display its data using Streamlit
 if file is not None:
     # Use pandas to read in the Excel file
-    df = pd.read_excel('elonmusk_user_tweets.xlsx', usecols=['Tweet Id', 'Text', 'Name', 'Screen Name', 'UTC', 'Created At',
-       'Favorites', 'Retweets', 'Language', 'Client', 'Tweet Type'])
+    df = pd.read_excel('elonmusk_user_tweets.xlsx', usecols=['Tweet Id', 'Text', 'Name', 'Screen Name', 'UTC', 'Created At', 'Favorites', 'Retweets', 'Language', 'Client', 'Tweet Type'])
     # Display some basic information about the data
     st.sidebar.write("## About")
     st.sidebar.write("This app allows you to analyze Twitter data from an Excel file.This app will be further developed to preprocess this tweets dataset for Fine Tuning Large Language Models in future.")
