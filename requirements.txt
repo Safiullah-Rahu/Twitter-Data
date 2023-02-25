@@ -2,7 +2,6 @@ streamlit
 pandas
 wordcloud
 matplotlib
-os
 re
 random
 time
