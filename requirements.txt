@@ -2,7 +2,5 @@ streamlit
 pandas
 wordcloud
 matplotlib
-random
-time
 hydralit_components
 pandas
