@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-import os
 import re
 import random
 import time
@@ -167,18 +166,13 @@ def preprocess_data(df):
     st.write('\nCreating dataset...')
     # for 4 replications of the same loader (index=2) from the standard loader group
     with hc.HyLoader('Processing',hc.Loaders.standard_loaders,index=0):
-        time.sleep(8)
+        time.sleep(5)
     #if st.button("Save Processed Dataset"):
     with open(f"data_{df['Screen Name'][0]}_train.txt", 'w', encoding='utf-8') as f:
         f.write(total_text)
     st.write('\n🎉 Dataset created successfully!')
     st.write('\n🎉 Dataset saved successfully!')
     
-    
-def long_running_process():
-    for i in range(10):
-        time.sleep(0.5)
-        st.experimental_rerun()
         
 # Set up the Streamlit app
 st.title("Twitter Data Analysis and Preprocessing App")
