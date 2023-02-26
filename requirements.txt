@@ -4,3 +4,4 @@ wordcloud
 matplotlib
 hydralit_components
 pandas
+openpyxl
