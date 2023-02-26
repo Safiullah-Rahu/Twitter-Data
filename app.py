@@ -172,6 +172,7 @@ def preprocess_data(df):
         f.write(total_text)
     st.write('\n🎉 Dataset created successfully!')
     st.write('\n🎉 Dataset saved successfully!')
+    st.download_button('Download Dataset', total_text, file_name=f"data_{df['Screen Name'][0]}_train.txt")
     
         
 # Set up the Streamlit app
